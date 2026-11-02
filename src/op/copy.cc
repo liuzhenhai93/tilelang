@@ -542,6 +542,10 @@ For CopyNode::MakeSIMTLoop(arith::Analyzer *analyzer) const {
             attr::kParallelLoopLayout,
             annotations.Get(attr::kParallelLoopLayout).value());
       }
+      // MLU dialect: sync=False. Other targets never set this key.
+      if (annotations.count("mlu_sync")) {
+        loop_annotations.Set("mlu_sync", annotations.Get("mlu_sync").value());
+      }
     }
 
     body = For(loop_vars[i]->var, 0, loop_vars[i]->dom->extent,

@@ -397,6 +397,7 @@ include("${CMAKE_CURRENT_SOURCE_DIR}/src/rocm/CMakeLists.txt")
 include("${CMAKE_CURRENT_SOURCE_DIR}/src/metal/CMakeLists.txt")
 include("${CMAKE_CURRENT_SOURCE_DIR}/src/webgpu/CMakeLists.txt")
 include("${CMAKE_CURRENT_SOURCE_DIR}/src/ascend/CMakeLists.txt")
+include("${CMAKE_CURRENT_SOURCE_DIR}/src/mlu/CMakeLists.txt")
 list(REMOVE_DUPLICATES TILE_LANG_SRCS)
 
 set(USE_Z3      ON CACHE STRING "Use Z3 SMT solver for TileLang optimizations")
